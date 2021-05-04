@@ -1,0 +1,332 @@
+body {
+    font-size: 1.5rem;
+    background-color: #dedede;
+    font-family: Helvetica, sans-serif;
+}
+html {
+	font-size: 62.5%;
+}
+img {
+	width: 100%;
+	height: auto;
+}
+
+header {
+    background-image: url('../img/header_pixelart.jpg');
+    background-repeat:repeat;
+    background-position: 50% 75%;
+    padding: 5rem;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+header form {
+    display:inline-block;
+}
+nav a {
+    background-color: LightSkyBlue;
+    padding: 1.5rem;
+    margin: 0 2rem;
+    text-decoration:none;
+}
+header>a{
+    width:50rem;
+}
+header img {
+    
+    opacity:0.9;
+}
+section {
+    display : flex;
+    flex-wrap:wrap;
+    justify-content:space-around;
+    margin : 3rem 0;
+}
+article {
+    padding:0 1.5rem;
+    border: 0.1rem solid #dedede;
+    display : flex;
+    flex-direction:column;
+    justify-content:space-around;
+    background-color: #fff;
+}
+article:hover {
+    transform: translateY(-1rem);
+}
+.articleAccueil {
+    width: 22%;
+    margin-bottom: 2rem;
+    
+}
+.description, .text {
+    text-align:justify;
+}
+.titre a {
+    text-decoration:none;
+    color:RoyalBlue;
+    
+}
+.titre {
+    border-bottom: 0.2rem solid RoyalBlue;
+    margin : 0.8rem 0;
+}
+h2 {
+    color:RoyalBlue;
+}
+/******* PAGE ARTICLE *******/
+/*****************************/
+.pageArticle {
+    width: 50%;
+}
+.pageArticle img{
+    width : 70%;
+    margin: 2rem auto;
+}
+iframe {
+    width:560;
+    margin:auto;
+    display:block;
+}
+/*commentaires*/
+.listeComments div {
+    background-color: #dedede;
+    padding: 1.5rem;
+    margin: 0.5rem auto;
+    max-width:80%;
+}
+
+.listeComments h2{
+    text-align: center;
+}
+.commentaires {
+    width: 30%;
+    height:100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction:column;
+    justify-content:space-around;
+    align-items:center;
+    background-color: #fff;
+}
+.commentaires legend {
+    text-align: center;
+    font-size:2rem;
+    color:RoyalBlue;
+}
+.commentaires form {
+    width:70%;
+    display: flex;
+    justify-content:center;
+    margin-top:2rem;
+}
+.commentaires form p {
+    display: flex;
+    align-items:center;
+}
+.commentaires label {
+    display: inline-block;
+    width : 10rem;
+}
+.commentaires fieldset {
+    border-color: RoyalBlue;
+}
+.commentaires form button {
+    padding : 0.5rem;
+    border-radius:0.5rem;
+    float:right;
+    text-align: center;
+    background-color: #dedede;
+}
+
+/***** PAGE LISTE ARTICLES *****/
+/*****************************/
+
+section #sortArts {
+    width:100%;
+    align-self: flex-end;
+    margin: 0 0 2rem 1rem;
+}
+
+.listArticles {
+    display : flex;
+    flex-wrap:wrap;
+    justify-content:space-around;
+}
+
+.articleListe {
+    width: 40%;
+    margin-bottom:3rem;
+}
+
+.nbArticles {
+    width : 80%;
+    margin:auto;
+    text-align: center;
+}
+
+
+/********* PAGE CATEGORY ********/
+/*****************************/
+
+.titreCategory {
+    margin-left:3rem;
+    color:RoyalBlue;
+}
+/********* PAGE ADMIN CONNEXION ********/
+/*****************************/
+.connexion {
+    width : 25rem;
+    margin : 4rem auto;
+    border : 1px solid RoyalBlue;
+}
+
+.connexion .erreur {
+    font-weight: bold;
+    color:red;
+}
+
+
+
+
+/********* DASHBOARD ********/
+/*****************************/
+.pageDashboard {
+    display:flex;
+}
+.gestions {
+    width : 20%;
+}
+.gestions div {
+    margin: 10rem 0 0 2rem;
+}
+.gestions a {
+    text-decoration : none;
+}
+.gestions h3 {
+    padding: 1.5rem;
+    width:70%;
+    color:RoyalBlue;
+}
+.gestions h3:hover {
+    background-color: Silver;
+}
+
+.dashboard {
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+    width:70%;
+}
+
+.dashboard h1 {
+    text-align: center;
+}
+
+.dashboard table {
+    text-align: center;
+    width:50%;
+    margin :auto;
+    border-collapse:collapse;
+    margin-bottom:3em; 
+    
+    width: 100%;
+}
+
+.dashboard td {
+    padding:0.5em 2em;
+}
+.dashboard th {
+    padding:0.5em 2em;
+
+}
+.dashboard tr:nth-child(even) {
+    background-color: #D3D3D3;
+}
+
+.dashboard button {
+    padding : 0.3rem;
+    border-radius:0.5rem;
+    text-align: center;
+    background-color: SteelBlue;
+    margin: 2rem 0;
+}
+.dashboard table a {
+    text-decoration:none;
+}
+
+.dashboardCategories form {
+    margin: 3rem 0;
+}
+/********* NEW ARTICLE *******************/
+/****************************************/
+.newArticle {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    width:60rem;
+    margin:auto;
+}
+.newArticle form {
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content:center;
+    margin-bottom:3rem;
+}
+
+.newArticle form label {
+    margin-right: 2rem;
+}
+#title {
+    width:50rem;
+}
+.newArticle .select {
+    display:flex;
+    justify-content:space-between;
+    width : 56rem;
+}
+
+.newArticle .select select {
+    padding: 0.5rem 4rem 0.5rem 1rem;
+}
+
+.newArticle input {
+    padding: 0.5rem;
+}
+
+.newArticle form p {
+    display: flex;
+    align-items:center;
+    justify-content: space-around;
+}
+
+.newArticle form button {
+    align-self:center;
+}
+
+
+/********** RESPONSIVE *********/
+/*****************************/
+
+
+@media screen and (max-width: 1200px) {
+    .articleAccueil {
+        width : 45%;
+    }
+    .articleListe {
+    width: 100%;
+    }
+    .pageArticle {
+    width: 100%;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .articleAccueil {
+        width : 100%;
+    }
+    .commentaires {
+        width: 100%;
+    }
+}
