@@ -1,0 +1,39 @@
+<main class="pageDashboard">
+    <aside class="gestions">
+        <div>
+            <a href="index.php?page=dashboard"><h3><i class="far fa-newspaper"></i>  Gestion des articles</h3></a>
+            <a href="index.php?page=comments"><h3><i class="fas fa-comments"></i>  Gestion des commentaires</h3></a>
+            <a href="index.php?page=dashboardCategories"><h3><i class="fas fa-tags"></i>  Gestion des catégories</h3></a>
+            <a href="index.php?page=writers"><h3><i class="fas fa-pen-nib"></i>  Gestion des auteurs</h3></a>
+        </div>
+    </aside>
+	<section class="dashboard">
+	    <h1>Gestion des articles</h1>
+	    <a href="index.php?page=newArticle"><button>Créer un nouvel article</button></a>
+	    <table>
+    	    <tr>
+                <th>ID</th>
+                <th>Création</th>
+                <th>Titre</th>
+                <th>Auteur</th>
+                <th>Catégorie</th>
+                <th>Brouillon</th>
+                <th>Modifier</th>
+                <th>Supprimer</th>
+            </tr>
+            <?php foreach($allArticles as $article): ?>
+    	    <tr>
+    	    	<td><?= $article['id'] ?></td>
+    			<td><?= $article['publication_date'] ?></td>
+    			<td><?= $article['title'] ?></td>
+    			<td><?= $article['first_name'] ?> <?= $article['last_name'] ?></td>
+    			<td><?= $article['name'] ?></td>
+    			<td><?= ($article['post']==1) ? "<strong>Publié</strong>" : "<em>En brouillon</em>" ?></td>
+    			<td><button><a href="index.php?page=newArticle&idModif=<?= $article['id'] ?>"><i class="fas fa-pen-nib"></i></a></button></td>
+    			<td><button onclick="confirmDelete()"><a href="index.php?page=dashboard&idDelete=<?= $article['id'] ?>"><i class="fas fa-trash-alt"></i></a></button></td>
+    	    </tr>
+    	    <?php endforeach; ?>
+	    </table>
+	</section>
+	
+</main>

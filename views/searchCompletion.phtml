@@ -1,0 +1,19 @@
+<?php if (!empty($allArticles)): ?>
+	<div class="nbArticles">
+		<h2>Il y a <?= $count['count'] ?> <?= ($count['count']!=1) ? "articles" : "article" ?> correspondant à votre recherche.</h2>
+	</div>
+	<?php foreach($allArticles as $article): ?>
+		<article class="articleListe">
+			<div class="titre">
+				<h2><a href="index.php?page=article&idArticle=<?= $article['id'] ?>"><?= $article['title'] ?></a></h2>
+				<p><strong>Dans la catégorie :</strong> <?= $article['name'] ?></p>
+			</div>
+			<a href="index.php?page=article&idArticle=<?= $article['id'] ?>"><img src="<?= $article['image'] ?>"></img></a>
+			<p class="description"><?= $article['description'] ?>... <a href="index.php?page=article&idArticle=<?= $article['id'] ?>">Lire la suite</a></p>
+			
+			<p>Rédigé par <strong><?= $article['first_name'] ?> <?= $article['last_name'] ?></strong>, le <?= $article['publication_date'] ?></p>
+		</article>
+	<?php endforeach; ?>
+<?php else: ?>
+	<h2>Aucun article ne correspond à votre recherche.</h2>
+<?php endif; ?>

@@ -1,0 +1,17 @@
+<main>
+    <h1 class="titreCategory"><?= $categoryName['name'] ?></h1>
+	<section>
+		<?php foreach($articlesCategory as $article): ?>
+			<article class="articleListe">
+				<div class="titre">
+					<h2><a href="index.php?page=article&idArticle=<?= $article['id'] ?>"><?= $article['title'] ?></a></h2>
+					<p><strong>Dans la catégorie :</strong> <?= $article['name'] ?></p>
+				</div>
+				<a href="index.php?page=article&idArticle=<?= $article['id'] ?>"><img src="<?= $article['image'] ?>"></img></a>
+				<p class="description"><?= $article['description'] ?>... <a href="index.php?page=article&idArticle=<?= $article['id'] ?>">Lire la suite</a></p>
+				
+				<p>Rédigé par <?= $article['first_name'] ?> <?= $article['last_name'] ?>, le <?= $article['publication_date'] ?></p>
+			</article>
+		<?php endforeach; ?>
+	</section>
+</main>

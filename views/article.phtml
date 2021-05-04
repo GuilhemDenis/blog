@@ -1,0 +1,39 @@
+<main>
+	<section>
+    	<article class="pageArticle">
+    		<div class="titre">
+	    		<h2><?= $article['title'] ?></h2>
+	    		<p><strong>Dans la catégorie</strong> : <?= $article['name'] ?></p>
+	    	</div>
+    		<img src="<?= $article['image'] ?>"></img>
+    		<p class="text"><?= $article['description'] ?></p>
+    		<p>Rédigé par <strong><?= $article['first_name'] ?> <?= $article['last_name'] ?></strong>, le <?= $article['publication_date'] ?>
+    		</p>
+    	</article>
+    	<article class="commentaires">
+    		<div class="listeComments">
+	    	    <h2>Liste des commentaires</h2>
+		    	    <?php foreach($comments as $comment): ?>
+		    	    	<div>
+			    	    	<p><i class="fas fa-comment"></i> Rédigé par : <strong><?= htmlspecialchars($comment['pseudo']) ?></strong></p>
+			    	    	<p><?= htmlspecialchars($comment['comment']) ?></p>
+		    	    	</div>
+		    	    <?php endforeach; ?>
+	    	</div>
+    	    <form method='post'>
+    	        <fieldset>
+    	            <legend>Nouveau commentaire</legend>
+            		<p>
+            			<label for="pseudo">Pseudo</label>
+            			<input type="text" name="pseudo" id="pseudo">
+            		</p>
+            		<p>
+            			<label for="comment">Commentaire</label>
+            			<textarea name="comment" id="comment" rows="8" cols="35"></textarea>
+            		</p>
+            		<button type="submit">Envoyer un commentaire</button>
+        		</fieldset>
+        	</form>
+    	</article>
+	</section>
+</main>

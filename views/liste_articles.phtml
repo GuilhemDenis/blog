@@ -1,0 +1,28 @@
+<main>
+	<section>
+		<form name="sort" id="sortArts" method="post" class="sort">
+			<label for="search">Recherche : </label>
+			<input type="search" id="searchArticles" name="search">
+			<label for"sort">Trié par : </label>
+			<select name="sort" id="sort">
+				<option class="optionSort" value="ORDER BY id DESC" <?= $_POST['sort'] == "ORDER BY id DESC" ? 'selected' : "" ?> >Les plus récents</option>
+				<option class="optionSort" value="ORDER BY id" <?= $_POST['sort'] == "ORDER BY id" ? 'selected' : "" ?>>Les plus anciens</option>
+			</select>
+			
+		</form>
+		<div class="listArticles">
+			<?php foreach($allArticles as $article): ?>
+					<article class="articleListe">
+						<div class="titre">
+							<h2><a href="index.php?page=article&idArticle=<?= $article['id'] ?>"><?= $article['title'] ?></a></h2>
+							<p><strong>Dans la catégorie :</strong> <?= $article['name'] ?></p>
+						</div>
+						<a href="index.php?page=article&idArticle=<?= $article['id'] ?>"><img src="<?= $article['image'] ?>"></img></a>
+						<p class="description"><?= $article['description'] ?>... <a href="index.php?page=article&idArticle=<?= $article['id'] ?>">Lire la suite</a></p>
+						
+						<p>Rédigé par <strong><?= $article['first_name'] ?> <?= $article['last_name'] ?></strong>, le <?= $article['publication_date'] ?></p>
+					</article>
+			<?php endforeach; ?>
+		</div>
+	</section>
+</main>

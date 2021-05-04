@@ -1,0 +1,31 @@
+<main class="pageDashboard">
+    <aside class="gestions">
+        <div>
+            <a href="index.php?page=dashboard"><h3><i class="far fa-newspaper"></i>  Gestion des articles</h3></a>
+            <a href="index.php?page=comments"><h3><i class="fas fa-comments"></i>  Gestion des commentaires</h3></a>
+            <a href="index.php?page=dashboardCategories"><h3><i class="fas fa-tags"></i>  Gestion des catégories</h3></a>
+            <a href="index.php?page=writers"><h3><i class="fas fa-pen-nib"></i>  Gestion des auteurs</h3></a>
+        </div>
+    </aside>
+	<section class="dashboard">
+	    <h1>Gestion des commentaires</h1>
+	    <table>
+    	    <tr>
+                <th>ID</th>
+                <th>Pseudo</th>
+                <th>Contenu</th>
+                <th>Article</th>
+                <th>Supprimer</th>
+            </tr>
+            <?php foreach($comments as $comment): ?>
+    	    <tr>
+    	    	<td><?= $comment['id'] ?></td>
+    			<td><?= $comment['pseudo'] ?></td>
+    			<td><?= $comment['comment'] ?></td>
+    			<td><?= $comment['title'] ?></td>
+    			<td><button onclick="confirmDeleteComment()"><a href="index.php?page=comments&idDeleteComment=<?= $comment['id'] ?>"><i class="fas fa-trash-alt"></i></a></button></td>
+    	    </tr>
+    	    <?php endforeach; ?>
+	    </table>
+	</section>
+</main>

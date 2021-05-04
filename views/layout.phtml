@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdn.tiny.cloud/1/7fhmzwym6zp5o49d3vfctke28xfnmh7pc4a8igti1zwqnktx/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+	<link rel="stylesheet" href="assets/css/index.css" type="text/css" />
+</head>
+<body>
+	<header>
+		<nav>
+			<a href="index.php">Accueil</a>
+			<a href="index.php?page=liste">Tous les articles</a>
+			<form action="index.php?page=search" method="post">
+				<input type="search" id="search" name="search">
+				<button><i class="fas fa-search"></i></button>
+			</form>
+		</nav>
+		<a href="index.php"><img src="assets/img/rush_to_relax.jpg"></img></a>
+		<nav>
+			<?php if(isset($_SESSION['admin'])): ?>
+				<a href="index.php?page=drafts">Brouillons</a>
+			<?php endif; ?>
+			<?php if(isset($_SESSION['admin'])): ?>
+				<a href="index.php?page=dashboard">Tableau de bord</a>
+			<?php else: ?>
+				<a href="index.php?page=admin">Administration</a>
+			<?php endif; ?>
+			<?php if(isset($_SESSION['admin'])): ?>
+				<a href="index.php?page=admin&action=deco">Deconnexion</a>
+			<?php endif; ?>
+		</nav>
+	</header>
+	
+	<!-- code principal de la page -->
+	<?php include $template ?>
+	<script src="assets/js/script.js"></script>
+</body>
+</html>
+	
+	
+	

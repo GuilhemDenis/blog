@@ -1,0 +1,53 @@
+<main>
+    <section class="newArticle">
+    	<h1>Rédiger un article</h1>
+    	<form method="post" enctype="multipart/form-data">
+    		<div class="select">
+        		<p>
+        			<label for='category'>Catégorie</label>
+        			<select name="category" id="category">
+        			    <?php foreach($categories as $category): ?>
+            			     <option value="<?= $category['id'] ?>" <?= (isset($_GET['idModif']) && $category['id'] == $article['id_category']) ? "selected" : "" ?> >
+            			        <?= $category['name'] ?>
+            			     </option>
+        			    <?php endforeach; ?>
+        			</select>
+        		</p>
+        		<p>
+        			<label for='writer'>Auteur</label>
+        			<select name="writer" id="writer">
+        			    <?php foreach($writers as $writer): ?>
+        			        <option value="<?= $writer['id'] ?>" <?= (isset($_GET['idModif']) && $writer['id'] == $article['id_writer']) ? "selected" : "" ?>>
+        			        <?= $writer['first_name'] ?> <?= $writer['last_name'] ?>
+        			     </option>
+        			    <?php endforeach; ?>
+        			</select>
+        		</p>
+    		</div>
+    		
+    		<p>
+    			<label for='title'>Titre</label>
+    			<input type="text" name="title" id="title" value="<?= (isset($_GET['idModif'])) ? $article['title'] : "" ?>">
+    		</p>
+    		<p>
+    			<label for='img'>Image</label>
+    			<input type="file" name="img" id="img" value="<?= (isset($_GET['idModif'])) ? $article['image'] : "" ?>">
+    		</p>
+    		<p>
+    			<label for='text'>Texte</label>
+    			<textarea id="text" name="text" rows="30" cols="70"><?= (isset($_GET['idModif'])) ? $article['description'] : "" ?></textarea>
+    		</p>
+    		<div class="select">
+        		<p>
+        			<label for='date'>Date de publication</label>
+        			<input type="datetime-local" name="date" id="date" value="<?= (isset($_GET['idModif'])) ? $article['publication_date'] : "" ?>">
+        		</p>
+        		<p>
+        			<label for="draft">Mettre en brouillon</label>
+        			<input type="checkbox" id = "draft" name = "draft" <?= (isset($_GET['idModif']) && $article['post'] == 0) ? "checked" : "" ?>>
+        		</p>
+    		</div>
+    		<button type="submit"><?= (isset($_GET['idModif'])) ? "Modifier l'article" : "Créer un nouvel article" ?></button>
+    	</form>
+	</section>
+</main>
